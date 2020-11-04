@@ -15,6 +15,12 @@ class Usuarios {
         return persona;
     }
 
+    searchPersonas(find) {
+        let exp = new RegExp(find.toLowerCase());
+        let personas = this.personas.filter((persona) => exp.test(persona.nombre.toLowerCase()));
+        return personas;
+    }
+
     getPersonas() {
         return this.personas;
     }
